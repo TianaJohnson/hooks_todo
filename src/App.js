@@ -19,6 +19,7 @@ function TodoForm({addTodo}){
       <input type="text"
              className="input"
              value={value} 
+             placeholder="Add To-Do"
              onChange={e => setValue(e.target.value)}/>
     </form>
   )
@@ -39,7 +40,13 @@ function App() {
         text: 'Build really cool todo app',
         isCompleted: false
       },
-    ])
+    ]);
+
+    const addTodo = text => {
+      const newTodo = [...todo, { text }];
+      setTodos(newTodos);
+    }
+
 
     return(
       <div className="app">
