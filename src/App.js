@@ -5,7 +5,7 @@ function Todo({ todo, index}) {
   return <div className="todo">{todo.text}</div>;
 }
 function TodoForm({addTodo}){
-  const [value, setValue] = userState('');
+  const [value, setValue] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -43,7 +43,7 @@ function App() {
     ]);
 
     const addTodo = text => {
-      const newTodo = [...todo, { text }];
+      const newTodos = [...Todo, { text }];
       setTodos(newTodos);
     }
 
