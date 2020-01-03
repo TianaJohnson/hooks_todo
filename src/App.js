@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import './App.css';
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
-  return <div style={{textDecoration: todo.isCompleted ? 'line-through' : ''}}
-              className="todo">{todo.text}
+  // this is what creates the line through the word. is that a js method or hook?
+    return (  
+              <div  className="todo" style={{textDecoration: todo.isCompleted ? 'line-through' : ''}}
+
+              {todo.text}
+
               <div>
                 <button onClick={() => completeTodo(index)}>Complete</button>
                 <button onClick={() => removeTodo(index)}>x</button>
               </div>
-              </div>;
+              </div>
+    );
 } 
 function TodoForm({addTodo}){
   const [value, setValue] = useState('');
